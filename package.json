@@ -1,0 +1,29 @@
+{
+  "name": "elm-simple-seed",
+  "version": "1.0.0",
+  "description": "a simple seed project following best practices to build your elm application.",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "compile": "elm make src/Main.elm --output app.js",
+    "compile:watch": "watch 'npm run compile' ./src",
+    "compile:optimize": "npm run compile -- --optimize",
+    "dist": "copyfiles app.js index.html dist",
+    "build": "npm run clean && npm run compile:optimize && npm run uglify && npm run dist",
+    "uglify": "uglifyjs app.js --compress 'pure_funcs=\"F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9\",pure_getters=true,keep_fargs=false,unsafe_comps=true,unsafe=true,passes=2' --output=app.js && uglifyjs app.js --mangle --output=app.js",
+    "start": "npm run compile:watch & live-server"
+  },
+  "keywords": [
+    "elm"
+  ],
+  "author": "Max Burri",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "elm": "^0.19.0-bugfix6",
+    "elm-format": "^0.8.1",
+    "live-server": "^1.2.1",
+    "rimraf": "^2.6.3",
+    "uglify-js": "^3.4.9",
+    "watch": "^1.0.2"
+  }
+}
