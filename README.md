@@ -1,7 +1,5 @@
 # elm-seed
 
-_yaes_ - yet another elm seed...
-
 compile, run and build your elm spa without any bundler only using the elm compiler, uglify-js and the packages rimraf and copyfiles... thats it.
 
 For development the packages watch and live-server allow for watching file changes and automatically reload everything in your browser.
